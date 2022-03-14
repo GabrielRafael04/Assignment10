@@ -8,7 +8,7 @@ package Assignment10;
  *
  * @author fundacion
  */
-class Item {
+public class Item {
     
     String name;
     
