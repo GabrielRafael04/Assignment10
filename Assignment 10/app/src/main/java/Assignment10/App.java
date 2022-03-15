@@ -10,16 +10,42 @@ public class App {
 
     public static void main(String[] args) {
         
-    Sword espada = new Sword(20, 1000, "fire sword");
-    Inventory nuevo = new Inventory(3,20);
-    
-    Tonic inti = new Tonic("curar", "tonico inti", 20);
-    Poison veneno = new Poison("envenenar", "veneno de clash", -20);
-    nuevo.addItem(inti);
-    nuevo.addItem(espada);
-    //nuevo.moveItem(inti, 15);
-    //nuevo.ver(1, 0);
-    //nuevo.searchItem(inti);
-    nuevo.useItem(veneno);
+        //creando mi inventario(numero de armas, numero de items)
+        Inventory bag = new Inventory( 5, 30);
+        
+        //Creando items para agregar al inventario
+        // Arma(daño que causa, municion, nombre)
+        Hammer hammer = new Hammer( 5, 100, "Mazo");
+        Sword espada = new Sword( 12, 100, "espada de hierro");
+        Shotgun escopeta = new Shotgun( 30, 5,"escopeta");
+        bag.addItem(hammer);
+        bag.addItem(espada);
+        bag.addItem(escopeta);
+        
+        //al usar un arma me retorna a quien se causo daño y cuanto se le causo
+        bag.useItem(hammer);
+        
+        //elixir recupera mana, tonic recupera vida y poison disminuye vida
+        
+        Elixir elixir = new Elixir("recupera mana", "elixir", 30);
+        bag.addItem(elixir);
+        bag.useItem(elixir);
+        
+        Poison poison = new Poison("envenena", "poison", 50);
+        bag.addItem(poison);
+        bag.useItem(poison);
+        
+        Tonic Tonic = new Tonic("recupera salud", "Tonic", 100);
+        bag.addItem(Tonic);
+        bag.useItem(Tonic);
+        
+        bag.ver(0, 1);
+        //cambiando de posicion un arma
+        //move recibe(item a mover, posicion en la que la pondras)
+        //muestra el nombre del objeto encontrado
+        bag.moveItem(espada, 4);
+        bag.ver(0, 4);
+        bag.ver(0, 1);
+        
     }
 }

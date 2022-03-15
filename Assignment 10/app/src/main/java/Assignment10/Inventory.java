@@ -60,7 +60,9 @@ public class Inventory {
                 position++;
             }
             capacityItems[fila][position] = add;
+
         }
+
         System.out.println("Was added: " + add.getName() );
     }
     
@@ -118,7 +120,7 @@ public class Inventory {
                 }
                 else{
                     if(position == (armsInventory.length)-1 && found == 0){
-                        //System.out.println("The item was not found");
+                        System.out.println("The item was not found");
                     } 
                 }
                 position++;
@@ -133,13 +135,15 @@ public class Inventory {
                 }
                 else{
                     if(position == consumableInventory.length-1){
-                       // System.out.println("The item was not found");
+                        System.out.println("The item was not found");
                     } 
                 }
                 position++;
             }
         }
         int[] result = {fila, columna};
+                System.out.println(" ");
+
         System.out.println(Arrays.toString(result));
         return result;
         
@@ -178,6 +182,7 @@ public class Inventory {
                     if(position == consumableInventory.length-1){
                        // System.out.println("The item was not found");
                     } 
+                    
                 }
                 position++;
             }
@@ -221,6 +226,10 @@ public class Inventory {
                 //item.use();
                 effect = item.getEffect();
             }
+            
+            delete(aUse);
+            
+            
         }
         if(aUse instanceof Arms){
             affected ="Enemy";
@@ -230,8 +239,47 @@ public class Inventory {
             
         }
         String[] result = { affected ,(effect + "")};
+                System.out.println(" ");
+
         System.out.println(Arrays.toString(result));
         return result;
+    }
+    
+    public void delete(Item delete){
+        int fila = 0;
+        if(delete instanceof Arms){
+            fila = 0;
+            int position = 0;
+            int found = 0;
+            for(Item item : armsInventory){
+                
+                if(item == delete){
+                    capacityItems[fila][position] = null;
+                    found = 1;
+                }
+                else{
+                    if(position == (armsInventory.length)-1 && found == 0){
+                       // System.out.println("The item was not found");
+                    } 
+                }
+                position++;
+            }
+        }
+        if(delete instanceof Consumable){
+            fila = 1;
+            int position = 0;
+            for(Item item : consumableInventory){
+                if(item == delete){
+                    capacityItems[fila][position] = null;
+                }
+                else{
+                    if(position == consumableInventory.length-1){
+                        //System.out.println("The item was not found");
+                    } 
+                }
+                position++;
+            }
+        }
     }
     
     

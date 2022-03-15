@@ -22,6 +22,8 @@ public class Item {
     } 
     
     public void use(){
+                System.out.println(" ");
+
         System.out.println("Using the item");
     }
 

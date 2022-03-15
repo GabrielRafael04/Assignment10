@@ -14,7 +14,7 @@ public class Poison extends Consumable{
     
     public Poison(String use, String name,int lossHealth){
         super(use, name);
-        effect = lossHealth;
+        effect = lossHealth*(-1);
     }
     
     @Override
