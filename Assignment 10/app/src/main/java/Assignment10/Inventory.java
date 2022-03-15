@@ -28,6 +28,29 @@ public class Inventory {
         capacityItems = total;
     } 
     
+    public void mostrarInventory(){
+        System.out.println("Inventory content : ");
+        for(Item arm:capacityItems[0]){
+            if(arm != null){
+            System.out.print("  " + arm.getName()+ " ");
+            }
+            else{
+                System.out.print("  ");
+            }
+            }
+        System.out.println("");
+        for(Item consumible:capacityItems[1]){
+            if(consumible != null){
+            System.out.print(" " + consumible.getName()+ " ");
+            }
+            else{
+                System.out.print("  ");
+            }
+        
+        }
+        System.out.println("");
+        System.out.println("");
+    }
     
     public void ver(int fila, int columna){
         if(capacityItems[fila][columna]!= null){
@@ -239,8 +262,6 @@ public class Inventory {
             
         }
         String[] result = { affected ,(effect + "")};
-                System.out.println(" ");
-
         System.out.println(Arrays.toString(result));
         return result;
     }

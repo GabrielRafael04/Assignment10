@@ -4,10 +4,17 @@
  */
 package Character;
 
+import Assignment10.Inventory;
+
 /**
  *
  * @author fundacion
  */
-public class ChaosWitch {
+public class ChaosWitch extends Wizard{
+    
+    public ChaosWitch(String nombre, String genero, int salud, int fuerza, int magia, Inventory inventario){
+        super(nombre,genero,salud,fuerza,magia,inventario);
+    }
+
     
 }

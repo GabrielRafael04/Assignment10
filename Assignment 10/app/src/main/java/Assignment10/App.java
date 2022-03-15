@@ -35,17 +35,26 @@ public class App {
         bag.addItem(poison);
         bag.useItem(poison);
         
-        Tonic Tonic = new Tonic("recupera salud", "Tonic", 100);
-        bag.addItem(Tonic);
-        bag.useItem(Tonic);
+        //mostrar imprime el nombre de todos los objetos que estan en el inventario
+        bag.mostrarInventory();
+        
+        
+        Tonic tonic = new Tonic("recupera salud", "Tonic", 100);
+        bag.addItem(tonic);
+        bag.useItem(tonic);
         
         bag.ver(0, 1);
         //cambiando de posicion un arma
         //move recibe(item a mover, posicion en la que la pondras)
-        //muestra el nombre del objeto encontrado
         bag.moveItem(espada, 4);
+        //muestra el nombre del objeto encontrado
         bag.ver(0, 4);
         bag.ver(0, 1);
+        
+        bag.mostrarInventory();
+
+        
+        
         
     }
 }

@@ -4,10 +4,16 @@
  */
 package Character;
 
+import Assignment10.Inventory;
+
 /**
  *
  * @author fundacion
  */
-public class Knight {
+public class Knight extends Enemy{
+    
+    public Knight(String nombre, String genero, int salud, int fuerza, int magia, Inventory inventario){
+        super(nombre,genero,salud,fuerza,magia,inventario);
+    }
     
 }

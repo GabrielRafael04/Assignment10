@@ -4,10 +4,20 @@
  */
 package Character;
 
+import Assignment10.Inventory;
+
 /**
  *
  * @author fundacion
  */
-public class Hero {
+public class Hero extends Character{
+    
+    
+    public Hero(String nombre, String genero, int salud, int fuerza, int magia, Inventory inventario){
+        super(nombre,genero,salud,fuerza,magia,inventario);
+    
+    }
+    
+    
     
 }

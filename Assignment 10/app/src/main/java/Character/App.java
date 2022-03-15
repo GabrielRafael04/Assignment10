@@ -3,12 +3,46 @@
  */
 package Character;
 
+import Assignment10.Elixir;
+import Assignment10.Hammer;
+import Assignment10.Inventory;
+import Assignment10.Poison;
+import Assignment10.Shotgun;
+import Assignment10.Sword;
+import Assignment10.Tonic;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        
+        Inventory inventary = new Inventory(5,20);
+        
+        Hammer hammer = new Hammer( 5, 100, "Mazo");
+        Sword espada = new Sword( 12, 100, "espada de hierro");
+        Shotgun escopeta = new Shotgun( 30, 5,"escopeta");
+        inventary.addItem(hammer);
+        inventary.addItem(espada);
+        inventary.addItem(escopeta);
+        Elixir elixir = new Elixir("recupera mana", "elixir", 30);
+        inventary.addItem(elixir);
+        Poison poison = new Poison("envenena", "poison", 50);
+        inventary.addItem(poison);
+        Tonic tonic = new Tonic("recupera salud", "Tonic", 100);
+        inventary.addItem(tonic);
+        
+        //Añadiendo objetos al inventario
+        inventary.mostrarInventory();
+        
+        Player player1 = new Player("pepito", "masculino", 1000, 20, 0, inventary );
+        player1.getName();
+        player1.attack(espada);
+        player1.rename("God");
+        player1.getName();
+        
+        ChaosWitch mago = new ChaosWitch("Harry", "masculino", 800, 10, 50, inventary);
+        mago.magicAttack();
     }
 }
